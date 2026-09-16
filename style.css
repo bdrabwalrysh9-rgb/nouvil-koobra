@@ -1,0 +1,608 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(#200016, #10001f);
+    height: 100vh;
+    font-family: system-ui;
+
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+header{
+
+    position: absolute;
+    width: 95%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+}
+
+header .logo{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+header ul li{
+   margin-right: 30px ;
+}
+header ul li a{
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+header ul li a:hover, .active {
+    background: #fff;
+    color: #200016;
+}
+
+.main{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.main::after{
+    content:'' ;
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to top,#200016,transparent);
+}
+
+.main img{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+#moon{
+    mix-blend-mode: screen;
+    transform: translateY(80px);
+}
+.nouvil{
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    transform: translateY(-170px);
+}
+ .contect{
+    color: #fff;
+    padding: 30px;
+
+ }
+ .contect h2{
+    margin: 20px;
+    font-size: 30px;
+ }
+ .contect p{
+    margin: 20px;
+
+ }
+
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        width: calc(100% - 30px);
+        margin: 20px 15px;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    header .logo {
+        font-size: 26px;
+    }
+
+    header ul {
+        width: 100%;
+        justify-content: space-between;
+        gap: 5px;
+    }
+
+    header ul li {
+        margin-right: 0;
+    }
+
+    header ul li a {
+        padding: 5px 8px;
+        font-size: 13px;
+    }
+
+    .main {
+        height: 100vh;
+        min-height: 600px;
+    }
+
+    .main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #moon {
+        transform: translateY(50px);
+    }
+
+    .nouvil {
+        font-size: 22px;
+        transform: translateY(-120px);
+    }
+
+    .main::after {
+        height: 80px;
+    }
+
+    .contect {
+        padding: 20px 15px;
+    }
+
+    .contect h2 {
+        margin: 15px 5px;
+        font-size: 24px;
+    }
+
+    .contect p {
+        margin: 15px 5px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+}
+
+
+/* شاشات الموبايل الصغيرة جداً */
+@media (max-width: 400px) {
+
+    header {
+        margin-top: 15px;
+    }
+
+    header .logo {
+        font-size: 24px;
+    }
+
+    header ul li a {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    .nouvil {
+        font-size: 20px;
+    }
+
+    .contect h2 {
+        font-size: 22px;
+    }
+}
+#stars,
+#moon {
+    transition: opacity 0.5s ease;
+}
+/* ===== INTRO ONLY ===== */
+
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at center, #35104a, transparent 45%),
+        #08000d;
+
+    color: white;
+
+    transition: 1s ease;
+}
+
+.intro-content {
+    text-align: center;
+}
+
+.my-photo {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid white;
+
+    box-shadow: 0 0 45px #9b4dff;
+
+    margin-bottom: 25px;
+}
+
+.intro p {
+    letter-spacing: 6px;
+    font-size: 12px;
+    color: #b99aff;
+}
+
+.intro h1 {
+    font-size: 70px;
+    margin: 10px 0;
+    letter-spacing: 6px;
+}
+
+.intro span {
+    color: #aaa;
+    letter-spacing: 4px;
+    font-size: 13px;
+}
+
+#enterBtn {
+    display: block;
+
+    margin: 30px auto 0;
+
+    padding: 12px 30px;
+
+    border: 1px solid white;
+    border-radius: 30px;
+
+    background: transparent;
+    color: white;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+#enterBtn:hover {
+    background: white;
+    color: #18001f;
+}
+
+.intro.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* موبايل */
+
+@media (max-width: 768px) {
+
+    .my-photo {
+        width: 145px;
+        height: 145px;
+    }
+
+    .intro h1 {
+        font-size: 52px;
+    }
+
+}
+/* =========================
+   INTRO - RESPONSIVE
+========================= */
+
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    box-sizing: border-box;
+    padding: 30px;
+
+    background:
+        radial-gradient(circle at center, #35104a, transparent 45%),
+        #08000d;
+
+    color: #fff;
+
+    overflow: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.intro-content {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.my-photo {
+    display: block;
+
+    width: clamp(120px, 18vw, 200px);
+    height: clamp(120px, 18vw, 200px);
+
+    margin: 0 auto 25px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: 3px solid #fff;
+
+    box-shadow:
+        0 0 25px rgba(155, 77, 255, .5),
+        0 0 60px rgba(155, 77, 255, .25);
+}
+
+.intro p {
+    margin: 0 0 10px;
+
+    font-size: clamp(10px, 1.3vw, 14px);
+
+    letter-spacing: clamp(3px, 0.6vw, 7px);
+
+    color: #b99aff;
+}
+
+.intro h1 {
+    margin: 5px 0 15px;
+
+    font-size: clamp(45px, 8vw, 90px);
+
+    line-height: 1;
+
+    letter-spacing: clamp(3px, 0.8vw, 8px);
+}
+
+.intro span {
+    display: block;
+
+    font-size: clamp(10px, 1.5vw, 15px);
+
+    letter-spacing: clamp(2px, 0.5vw, 5px);
+
+    color: #aaa;
+}
+
+#enterBtn {
+    display: block;
+
+    margin: 30px auto 0;
+
+    padding: 12px 30px;
+
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+#enterBtn:hover {
+    background: #fff;
+    color: #18001f;
+    transform: translateY(-3px);
+}
+
+.intro.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =========================
+   موبايل صغير
+   320px - 374px
+========================= */
+
+@media (max-width: 374px) {
+
+    .intro {
+        padding: 20px 15px;
+    }
+
+    .my-photo {
+        width: 120px;
+        height: 120px;
+
+        margin-bottom: 20px;
+    }
+
+    .intro h1 {
+        font-size: 45px;
+    }
+
+    .intro p {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .intro span {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    #enterBtn {
+        margin-top: 25px;
+        padding: 10px 25px;
+        font-size: 11px;
+    }
+}
+
+
+/* =========================
+   موبايل متوسط
+   375px - 480px
+========================= */
+
+@media (min-width: 375px) and (max-width: 480px) {
+
+    .intro {
+        padding: 25px 20px;
+    }
+
+    .my-photo {
+        width: 145px;
+        height: 145px;
+    }
+
+    .intro h1 {
+        font-size: 55px;
+    }
+
+}
+
+
+/* =========================
+   موبايل كبير / تابلت صغير
+   481px - 767px
+========================= */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .my-photo {
+        width: 175px;
+        height: 175px;
+    }
+
+    .intro h1 {
+        font-size: 65px;
+    }
+
+}
+
+
+/* =========================
+   تابلت / لاب صغير
+   768px - 1024px
+========================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .intro-content {
+        max-width: 650px;
+    }
+
+    .my-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .intro h1 {
+        font-size: 75px;
+    }
+
+}
+
+
+/* =========================
+   لاب وشاشات كبيرة
+   1025px+
+========================= */
+
+@media (min-width: 1025px) {
+
+    .intro-content {
+        max-width: 800px;
+    }
+
+    .my-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .intro h1 {
+        font-size: 90px;
+    }
+
+}
+/* Contact Section */
+.contact-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: #050505;
+    color: white;
+}
+
+.contact-section h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact-item {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 400px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    border-color: #4a243f;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.contact-item h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.contact-item a:hover {
+    color: #C77AA8;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 60px 15px;
+    }
+
+    .contact-section h2 {
+        font-size: 30px;
+    }
+
+    .contact-item {
+        width: 90%;
+    }
+}
